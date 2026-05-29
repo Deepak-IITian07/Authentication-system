@@ -1,0 +1,176 @@
+/* Reset & Deep Space Background */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0d1117; /* Slick dark background */
+  overflow: hidden;
+  position: relative;
+}
+
+/* Canvas Background sizing */
+#starfield {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;   /* Force full width viewport */
+  height: 100vh;  /* Force full height viewport */
+  z-index: 1;     /* Keep it underneath the card */
+  display: block; /* Eliminate inline scrollbar spacing glitches */
+}
+/* Card Container with Entrance Slide Effect */
+.login-container {
+  background: rgba(22, 27, 34, 0.8); /* Translucent dark body */
+  -webkit-backdrop-filter: blur(12px); /* Enhanced frosted blur */
+  backdrop-filter: blur(12px);
+  
+  /* FIXED: Stronger semi-transparent white border to catch light reflections */
+  border: 1px solid rgba(255, 255, 255, 0.15); 
+  
+  /* FIXED: Deep, wide ambient dark drop-shadow */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 
+              0 0 30px rgba(88, 166, 255, 0.05); /* Subtle inner tech glow */
+              
+  padding: 40px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  z-index: 10; /* Ensures it floats cleanly above your canvas layer */
+  animation: slideUpFade 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+/* CSS Keyframes for the Entrance Slide */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Headings & Text Color Fixes for Dark Theme */
+h2 {
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-size: 28px;
+  min-height: 38px; /* Prevents layout layout jumps while auto-typing */
+}
+
+.subtitle {
+  color: #8b949e;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Profile Mode Class Styles */
+.login-container.profile-mode {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 2px solid #58a6ff;
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-container.profile-mode:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(88, 166, 255, 0.4);
+}
+
+#email-display {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffffff;
+  background: #21262d;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Form Styles */
+.input-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #c9d1d9;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 16px; /* Slightly taller for modern ergonomics */
+  background: rgba(33, 38, 45, 0.7); /* Translucent dark inputs */
+  border: 1px solid #30363d; /* Crisper, thinner border line */
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  transition: all 0.25s ease-in-out;
+}
+
+/* Vibrant neon blue active focus state */
+.input-group input:focus {
+  outline: none;
+  border-color: #58a6ff;
+  background: #21262d;
+  box-shadow: 0 0 0 4px rgba(88, 166, 255, 0.2);
+}
+
+#submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #238636; /* Clean GitHub green */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#submit-btn:hover { background: #2ea043; }
+
+#logout-btn {
+  background: #da3637;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.error-box {
+  background-color: rgba(248, 81, 73, 0.15);
+  border: 1px solid #f85149;
+  color: #ff7b72;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.hidden { display: none !important; }
