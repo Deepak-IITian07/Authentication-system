@@ -25,7 +25,23 @@ body {
   max-width: 400px;
   text-align: center;
 }
+/* Hover effect: Scale up by 1.1 units and add a colorful glowing shadow */
+.login-container.profile-mode:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
 
+/* This class transforms the login container into a clean profile card */
+.login-container.profile-mode {
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px; /* Packed, uniform layout */
+  border: 4px solid #667eea; /* Vibrant border */
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 h2 {
   color: #333;
   margin-bottom: 8px;
@@ -103,4 +119,31 @@ h2 {
 /* Helper Class to hide/show error */
 .hidden {
   display: none;
+}
+
+#logout-btn {
+  background: #e53e3e; /* Red color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#logout-btn:hover {
+  background: #c53030;
+}
+
+/* Styled layout for the user email text inside the card */
+#email-display {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+  background: #f0f4ff;
+  padding: 8px 16px;
+  border-radius: 20px;
 }
